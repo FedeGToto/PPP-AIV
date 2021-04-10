@@ -44,7 +44,7 @@ public class CamerasManager : MonoBehaviour
 
         for (int i = 0; i < cameras.Length; i++)
         {
-            RenderTexture textureToAssign = getRightRenderTexture();
+            RenderTexture textureToAssign = GetRightRenderTexture();
 
             if (textureToAssign != null)
             {
@@ -53,7 +53,7 @@ public class CamerasManager : MonoBehaviour
         }
     }
 
-    private RenderTexture getRightRenderTexture()
+    private RenderTexture GetRightRenderTexture()
     {
         RenderTexture result = null;
 

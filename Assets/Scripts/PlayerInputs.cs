@@ -56,8 +56,8 @@ public class PlayerInputs : MonoBehaviour
     {
         rb.velocity = new Vector2(hMove * speed, rb.velocity.y);
 
-        if (isRightPlayer)
-            Debug.Log(rb.velocity);
+        //if (isRightPlayer)
+           // Debug.Log(rb.velocity);
     }
         
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInputs : MonoBehaviour
 {
-    [SerializeField] bool isRightPlayer;
+    [SerializeField] bool degugIsRightPlayer;
     [SerializeField] KeyCode leftKey, rightKey, jumpKey;
 
     List<KeyCode> possibleInputs;
@@ -27,7 +27,7 @@ public class PlayerInputs : MonoBehaviour
         possibleInputs.Add(KeyCode.D);
 
         // se è il player giusto avrà gli input giusto
-        if (isRightPlayer)
+        if (degugIsRightPlayer)
         {
             leftKey = KeyCode.A;
             rightKey = KeyCode.D;

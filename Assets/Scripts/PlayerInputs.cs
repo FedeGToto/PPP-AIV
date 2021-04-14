@@ -56,8 +56,8 @@ public class PlayerInputs : MonoBehaviour
     {
         rb.velocity = new Vector2(hMove * speed, rb.velocity.y);
 
-        //if (isRightPlayer)
-           // Debug.Log(rb.velocity);
+        if (isRightPlayer)
+            Debug.Log(rb.velocity);
     }
         
 
@@ -68,7 +68,7 @@ public class PlayerInputs : MonoBehaviour
         else if (Input.GetKey(rightKey))
             hMove = 1;
         else hMove = 0f;
-
+        // need to add a control to not jump infinetly
         if (Input.GetKeyDown(jumpKey))
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }

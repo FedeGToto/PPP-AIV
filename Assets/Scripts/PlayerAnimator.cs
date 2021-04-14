@@ -13,33 +13,33 @@ public class PlayerAnimator : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            FlipSprite(true);
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            FlipSprite(false);
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            SetWalkState(true);
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            SetWalkState(false);
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            Jump();
-        }
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            Land();
-        }
-    }
+    //public void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Z))
+    //    {
+    //        FlipSprite(true);
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.X))
+    //    {
+    //        FlipSprite(false);
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.C))
+    //    {
+    //        SetWalkState(true);
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.V))
+    //    {
+    //        SetWalkState(false);
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.B))
+    //    {
+    //        Jump();
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.N))
+    //    {
+    //        Land();
+    //    }
+    //}
 
     public void FlipSprite(bool isRight)
     {

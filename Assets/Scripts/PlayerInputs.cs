@@ -7,18 +7,17 @@ enum combination { com_1, com_2, com_3, com_4, com_5, com_6, com_7, com_8, last}
 
 public class PlayerInputs : MonoBehaviour
 {
-    [SerializeField] float minLag, maxLag;
-    [SerializeField] bool degugIsRightPlayer;
-    [SerializeField] KeyCode leftKey, rightKey, jumpKey;
+    [SerializeField] PlayerAnimator anim;
+    [SerializeField] float speed, jumpForce;
 
     KeyCode A, W, D;
+    KeyCode leftKey, rightKey, jumpKey;
 
     Rigidbody2D rb;
 
     bool isJumping;
 
-    float hMove, vMove;
-    [SerializeField] float speed, jumpForce;
+    float hMove;
 
     private void Start()
     {
@@ -93,6 +92,8 @@ public class PlayerInputs : MonoBehaviour
     {
         Move(leftKey,rightKey,jumpKey);
 
+        if (hMove == 0)
+
         if (rb.velocity.y == 0) isJumping = false;
     }
 
@@ -104,16 +105,31 @@ public class PlayerInputs : MonoBehaviour
     private void Move(KeyCode leftKey, KeyCode rightKey, KeyCode jumpKey)
     {
         if (Input.GetKey(leftKey))
+        {
             hMove = -1;
+            anim.SetWalkState(true);
+            anim.FlipSprite(false);
+        }
         else if (Input.GetKey(rightKey))
+        {
             hMove = 1;
-        else hMove = 0f;
+            anim.SetWalkState(true);
+            anim.FlipSprite(true);
+        }
+        else
+        {
+            anim.SetWalkState(false);
+            hMove = 0f;
+        }
 
         if (Input.GetKeyDown(jumpKey) && !isJumping) 
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isJumping = true;
+            anim.Jump();
         }
+
+        if (rb.velocity.y < 0) anim.Land();
     }
 
     private void OnCollisionEnter(Collision collision)

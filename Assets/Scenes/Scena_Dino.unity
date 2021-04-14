@@ -627,7 +627,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2825b2c4ee254e24ca259672dcba5e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRightPlayer: 0
+  minLag: 0
+  maxLag: 0
+  degugIsRightPlayer: 0
   leftKey: 0
   rightKey: 0
   jumpKey: 0
@@ -10007,7 +10009,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2825b2c4ee254e24ca259672dcba5e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRightPlayer: 0
+  minLag: 0
+  maxLag: 0
+  degugIsRightPlayer: 0
   leftKey: 0
   rightKey: 0
   jumpKey: 0
@@ -10157,7 +10161,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2825b2c4ee254e24ca259672dcba5e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRightPlayer: 0
+  minLag: 0
+  maxLag: 0
+  degugIsRightPlayer: 0
   leftKey: 0
   rightKey: 0
   jumpKey: 0
@@ -10381,7 +10387,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2825b2c4ee254e24ca259672dcba5e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRightPlayer: 1
+  minLag: 0.1
+  maxLag: 0.5
+  degugIsRightPlayer: 0
   leftKey: 0
   rightKey: 0
   jumpKey: 0
@@ -11552,7 +11560,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2825b2c4ee254e24ca259672dcba5e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRightPlayer: 0
+  minLag: 0.1
+  maxLag: 0.5
+  degugIsRightPlayer: 0
   leftKey: 0
   rightKey: 0
   jumpKey: 0

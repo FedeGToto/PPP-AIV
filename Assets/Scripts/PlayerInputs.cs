@@ -11,6 +11,8 @@ public class PlayerInputs : MonoBehaviour
 
     Rigidbody2D rb;
 
+    bool isJumping;
+
     float hMove, vMove;
     [SerializeField] float speed, jumpForce;
 
@@ -44,20 +46,18 @@ public class PlayerInputs : MonoBehaviour
 
             jumpKey = possibleInputs[0];
         }
-
     }
 
     private void Update()
     {
         Move(leftKey,rightKey,jumpKey);
+
+        if (rb.velocity.y == 0) isJumping = false;
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(hMove * speed, rb.velocity.y);
-
-        if (isRightPlayer)
-            Debug.Log(rb.velocity);
     }
         
 
@@ -69,7 +69,18 @@ public class PlayerInputs : MonoBehaviour
             hMove = 1;
         else hMove = 0f;
 
-        if (Input.GetKeyDown(jumpKey))
+        if (Input.GetKeyDown(jumpKey) && !isJumping)
+        {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isJumping = true;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
+        {
+            isJumping = false;
+        }
     }
 }

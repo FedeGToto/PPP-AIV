@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-enum combination { com_1, com_2, com_3, com_4, com_5, com_6, com_7, com_8, last}
+enum combination { com_1, com_2, com_3, com_4, com_5, com_6, last}
 
 public class PlayerInputs : MonoBehaviour
 {

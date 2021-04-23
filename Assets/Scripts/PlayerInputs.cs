@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 enum combination { com_1, com_2, com_3, com_4, com_5, com_6, com_7, com_8, last}
 
@@ -15,6 +16,8 @@ public class PlayerInputs : MonoBehaviour
 
     Rigidbody2D rb;
 
+    Vector2 initialPos;
+
     bool isJumping;
 
     float hMove;
@@ -22,6 +25,7 @@ public class PlayerInputs : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        initialPos = rb.position;
 
         A = KeyCode.A;
         W = KeyCode.W;
@@ -92,6 +96,11 @@ public class PlayerInputs : MonoBehaviour
     {
         Move(leftKey,rightKey,jumpKey);
 
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            SceneManager.LoadScene(0);
+        }
+
         if (hMove == 0)
 
         if (rb.velocity.y == 0) isJumping = false;
@@ -139,4 +148,10 @@ public class PlayerInputs : MonoBehaviour
             isJumping = false;
         }
     }
+
+    public void ResetPosition()
+    {
+        rb.position = initialPos;
+    }
+
 }

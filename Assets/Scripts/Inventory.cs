@@ -12,12 +12,14 @@ public class Inventory : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+
+        itemNumber.text = $"x{num.ToString()}";
     }
 
     public void Add()
     {
         num++;
-        itemNumber.text = num.ToString();
+        itemNumber.text = $"x{num.ToString()}";
     }
 
 }

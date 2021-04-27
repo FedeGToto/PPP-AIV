@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 8390186157590825504}
   - component: {fileID: 8390186157590825505}
   - component: {fileID: 8390186157590825506}
+  - component: {fileID: -2129021872740650378}
   m_Layer: 0
   m_Name: Traps
   m_TagString: Untagged
@@ -319,3 +320,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484a5ca0b9d3dd94ab6d9b6c703403b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &-2129021872740650378
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8390186157590825507}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

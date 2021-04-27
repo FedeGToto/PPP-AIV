@@ -10,7 +10,12 @@ public class Trap : MonoBehaviour
         collision.gameObject.TryGetComponent(out p);
         if (p != null) 
         {
-            Debug.Log("player morto");
+            if (p.IsRight)
+            {
+                // resettare tutto
+            }
+            else
+                p.gameObject.SetActive(false);
         }
     }
 }

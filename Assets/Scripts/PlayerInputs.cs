@@ -67,8 +67,6 @@ public class PlayerInputs : MonoBehaviour
                 break;
         }
 
-        Debug.Log((int)com);
-
 
         // se è il player giusto avrà gli input giusto
         //if (degugIsRightPlayer)

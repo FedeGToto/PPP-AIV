@@ -12,6 +12,7 @@ public class PlayerInputs : MonoBehaviour
 {
     [SerializeField] PlayerAnimator anim;
     [SerializeField] float speed, jumpForce;
+    public bool IsRight;
 
     KeyCode A, W, D;
     KeyCode leftKey, rightKey, jumpKey;
@@ -31,6 +32,7 @@ public class PlayerInputs : MonoBehaviour
     public CamerasManager cameras;
 
     float hMove;
+
 
     private void Start()
     {

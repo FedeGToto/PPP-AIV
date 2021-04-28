@@ -1,8 +1,10 @@
-//using System;
 using System.Collections;
+using System;
+using Random = UnityEngine.Random;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 
 enum combination { com_1, com_2, com_3, com_4, com_5, com_6, last}
 
@@ -19,6 +21,14 @@ public class PlayerInputs : MonoBehaviour
     Vector2 initialPos;
 
     bool isJumping;
+
+    public bool isRightPlayer = false;
+
+    public List<PlayerInputs> falsePlayers;
+
+    public event EventHandler resetItems;
+
+    public CamerasManager cameras;
 
     float hMove;
 
@@ -149,7 +159,26 @@ public class PlayerInputs : MonoBehaviour
 
     public void ResetPosition()
     {
-        rb.position = initialPos;
+        if (isRightPlayer)
+        {
+            rb.position = initialPos;
+
+            for (int i = 0; i < falsePlayers.Count; i++)
+            {
+                falsePlayers[i].rb.gameObject.SetActive(true);
+                falsePlayers[i].rb.position = falsePlayers[i].initialPos;
+            }
+
+            resetItems?.Invoke(this, EventArgs.Empty);
+            cameras.AssignCameras();
+        }
+
+        else
+        {
+            //disable gameObj an Rb collider
+            rb.position = initialPos;
+            gameObject.SetActive(false);
+        }
     }
 
 }

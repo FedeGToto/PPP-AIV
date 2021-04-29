@@ -4,8 +4,6 @@ using System;
 
 public class LoadNextLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public enum Levels {Main_Menu, Level_1, Level_2, Level_3, Level_4, Level_5}
 
     public void Start()

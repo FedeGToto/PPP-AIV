@@ -212,6 +212,14 @@ MonoBehaviour:
   anim: {fileID: 2214356443506321015}
   speed: 6
   jumpForce: 35
+  IsRight: 0
+  isRightPlayer: 1
+  falsePlayers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cameras: {fileID: 0}
 --- !u!114 &1360216074
 MonoBehaviour:
   m_ObjectHideFlags: 0

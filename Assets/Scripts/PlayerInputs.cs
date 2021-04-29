@@ -18,9 +18,7 @@ public class PlayerInputs : MonoBehaviour
     bool isJumping;
 
     public bool isRightPlayer = false;
-
     public List<PlayerInputs> falsePlayers;
-
     public event EventHandler resetItems;
 
     public CamerasManager cameras;
@@ -42,7 +40,7 @@ public class PlayerInputs : MonoBehaviour
 
     private void Update()
     {
-        Move(leftKey,rightKey,jumpKey);
+        Move(leftKey, rightKey, jumpKey);
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
             SceneManager.LoadScene(0);

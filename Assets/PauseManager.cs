@@ -1,20 +1,15 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PauseManager : MonoBehaviour, IPointerClickHandler//, IPointerDownHandler
+public class PauseManager : MonoBehaviour
 {
-    [SerializeField] PlayerInputs player;
+    [SerializeField] PlayerInputs[] player;
     bool isPause;
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void PauseOneScene()
     {
         isPause = !isPause;
-        player.SetPause(isPause);
+        player[Random.Range(0, player.Length)].SetPause(isPause);
     }
 
-    //public void OnPointerDown(PointerEventData eventData)
-    //{
-    //    isPause = !isPause;
-    //    player.SetPause(isPause);
-    //}
 }

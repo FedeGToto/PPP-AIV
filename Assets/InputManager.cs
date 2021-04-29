@@ -41,7 +41,10 @@ public class InputManager : MonoBehaviour
         {
             combPos = Random.Range(0, inputs.Count);
             if (!used[combPos])
+            {
                 players[i].SetInput(inputs[combPos]);
+                used[combPos] = true;
+            }
             else i--;
         }
     }

@@ -13,7 +13,7 @@ public class Item : MonoBehaviour
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
 
-        PlayerInputs eventReset = GameObject.Find("RealPlayer").GetComponent<PlayerInputs>();
+        PlayerInputs eventReset = GameObject.Find("Player").GetComponent<PlayerInputs>();
         eventReset.resetItems += ActivateItem;
     }
 

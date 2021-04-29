@@ -10,7 +10,7 @@ public class LoadNextLevel : MonoBehaviour
 
     public void Start()
     {
-        GoalHandler goal = GameObject.Find("RealPlayer").GetComponent<GoalHandler>();
+        GoalHandler goal = GameObject.Find("Player").GetComponent<GoalHandler>();
         goal.On_Goal_Collision += Load_Next_Level;
     }
 

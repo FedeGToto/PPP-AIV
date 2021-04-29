@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
         if (instance == null)
             instance = this;
 
-        PlayerInputs eventItem = GameObject.Find("RealPlayer").GetComponent<PlayerInputs>();
+        PlayerInputs eventItem = GameObject.Find("Player").GetComponent<PlayerInputs>();
         eventItem.resetItems += ResetScore;
 
         itemNumber.text = $"x{num.ToString()}";

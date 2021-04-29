@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerInputs p;
-        collision.gameObject.TryGetComponent(out p);
-        if (p != null) 
+        PlayerInputs player = collision.gameObject.GetComponent<PlayerInputs>();
+
+        if (player != null)
         {
-            if (p.IsRight)
-            {
-                // resettare tutto
-            }
-            else
-                p.gameObject.SetActive(false);
+            player.ResetPosition();
         }
     }
 }

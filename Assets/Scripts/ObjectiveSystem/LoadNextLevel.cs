@@ -8,7 +8,10 @@ public class LoadNextLevel : MonoBehaviour
 
     public void Start()
     {
-        GoalHandler goal = GameObject.Find("Player").GetComponent<GoalHandler>();
+        //GoalHandler goal = GameObject.Find("Player").GetComponent<GoalHandler>();
+
+        GameObject g = GameObject.FindGameObjectWithTag("Player");
+        GoalHandler goal = g.GetComponent<GoalHandler>();
         goal.On_Goal_Collision += Load_Next_Level;
     }
 
@@ -22,6 +25,4 @@ public class LoadNextLevel : MonoBehaviour
         Levels levels = (Levels)level;
         SceneManager.LoadScene(levels.ToString());
     }
-
-   
 }

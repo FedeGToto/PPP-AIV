@@ -16,6 +16,7 @@ public class PlayerInputs : MonoBehaviour
     Vector2 initialPos;
 
     bool isJumping;
+    bool playerInPause;
 
     public bool isRightPlayer = false;
     public List<PlayerInputs> falsePlayers;
@@ -38,8 +39,16 @@ public class PlayerInputs : MonoBehaviour
         jumpKey = p.jumpKey;
     }
 
+    public void SetPause(bool p)
+    {
+        playerInPause = p;
+        Debug.Log(gameObject.name +" pause = " + playerInPause);
+    }
+
     private void Update()
     {
+        if (playerInPause) return;
+
         Move(leftKey, rightKey, jumpKey);
 
         if (Input.GetKeyDown(KeyCode.LeftShift))

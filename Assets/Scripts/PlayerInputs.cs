@@ -7,7 +7,6 @@ public class PlayerInputs : MonoBehaviour
 {
     [SerializeField] PlayerAnimator anim;
     [SerializeField] float speed, jumpForce;
-    public bool IsRight;
 
     KeyCode leftKey, rightKey, jumpKey;
 

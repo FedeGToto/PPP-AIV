@@ -488,6 +488,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1172874234}
     m_Modifications:
+    - target: {fileID: 8570104124799078311, guid: 895ec5a0e4625d04695af78ff637cd57, type: 3}
+      propertyPath: costForPause
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 8570104126371556122, guid: 895ec5a0e4625d04695af78ff637cd57, type: 3}
       propertyPath: m_Name
       value: GUI

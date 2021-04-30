@@ -14,6 +14,7 @@ public class PlayerInputs : MonoBehaviour
     Rigidbody2D rb;
 
     Vector2 initialPos;
+    [SerializeField] Transform spawnP;
 
     bool isJumping;
     bool playerInPause;
@@ -39,11 +40,12 @@ public class PlayerInputs : MonoBehaviour
         jumpKey = p.jumpKey;
     }
 
-    public void SetPause(bool p)
+    public void SetPause()
     {
-        playerInPause = p;
-        Debug.Log(gameObject.name +" pause = " + playerInPause);
+        playerInPause = !playerInPause;
     }
+
+    public bool IsPaused() { return playerInPause; }
 
     private void Update()
     {
@@ -106,7 +108,8 @@ public class PlayerInputs : MonoBehaviour
     {
         if (isRightPlayer)
         {
-            rb.position = initialPos;
+            //rb.position = initialPos;
+            rb.position = spawnP.position;
 
             for (int i = 0; i < falsePlayers.Count; i++)
             {

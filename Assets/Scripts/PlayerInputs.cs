@@ -56,7 +56,7 @@ public class PlayerInputs : MonoBehaviour
 
         Move(leftKey, rightKey, jumpKey);
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.Escape))
             SceneManager.LoadScene(0);
 
         if (hMove == 0)

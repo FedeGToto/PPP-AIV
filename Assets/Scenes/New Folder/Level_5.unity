@@ -112601,7 +112601,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1360216074, guid: f4a8eb1f7cb4e1e4887898e9c9922bea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f4a8eb1f7cb4e1e4887898e9c9922bea, type: 3}
 --- !u!114 &843594367 stripped
 MonoBehaviour:
@@ -112697,7 +112698,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1360216074, guid: f4a8eb1f7cb4e1e4887898e9c9922bea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f4a8eb1f7cb4e1e4887898e9c9922bea, type: 3}
 --- !u!114 &873846534 stripped
 MonoBehaviour:
@@ -114842,7 +114844,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1360216074, guid: f4a8eb1f7cb4e1e4887898e9c9922bea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f4a8eb1f7cb4e1e4887898e9c9922bea, type: 3}
 --- !u!114 &1262022051 stripped
 MonoBehaviour:
@@ -115917,7 +115920,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1360216074, guid: f4a8eb1f7cb4e1e4887898e9c9922bea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f4a8eb1f7cb4e1e4887898e9c9922bea, type: 3}
 --- !u!114 &1553190127 stripped
 MonoBehaviour:
@@ -119341,7 +119345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2203754015021394141, guid: f4a8eb1f7cb4e1e4887898e9c9922bea, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: RightPlayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4a8eb1f7cb4e1e4887898e9c9922bea, type: 3}

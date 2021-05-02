@@ -8,9 +8,7 @@ public class LoadNextLevel : MonoBehaviour
 
     public void Start()
     {
-        //GoalHandler goal = GameObject.Find("Player").GetComponent<GoalHandler>();
-
-        GameObject g = GameObject.FindGameObjectWithTag("Player");
+        GameObject g = GameObject.FindGameObjectWithTag("RightPlayer");
 
         if (g != null)
         {

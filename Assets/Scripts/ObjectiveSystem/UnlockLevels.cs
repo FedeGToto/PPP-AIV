@@ -7,10 +7,19 @@ public class UnlockLevels : MonoBehaviour
     // Start is called before the first frame update
 
     public List<GameObject> levels;
+    private int[] levelUnlocked = new int[4];
 
     void Start()
     {
-        int levelReached = PlayerPrefs.GetInt("levelReached", 1);
+        int currentLevel = PlayerPrefs.GetInt("levelReached", 1);
+        int levelReached = PlayerPrefs.GetInt("allUnlocked", 1);
+
+        if (levelReached <= currentLevel)
+        {
+            levelReached = currentLevel;
+
+            PlayerPrefs.SetInt("allUnlocked", levelReached);
+        }
 
         for (int i = 0; i < levels.Count; i++)
         {

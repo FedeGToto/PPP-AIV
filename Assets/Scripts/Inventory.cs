@@ -31,12 +31,9 @@ public class Inventory : MonoBehaviour
 
     public bool Remove(int cost)
     {
-        if (cost <= num){
-            num -= cost;
-            itemNumber.text = $"x{num.ToString()}";
-            return true;
-        }
-        return false;
+        num -= cost;
+        itemNumber.text = $"x{num.ToString()}";
+        return true;
     }
 
     private void ResetScore(object sender, EventArgs e)

@@ -3,22 +3,32 @@ using UnityEngine;
 public class Rotator : MonoBehaviour
 {
     public float speedRot = 5f;
+    public bool _360;
     bool back;
+
+    float rot;
+
     void Update()
     {
-        transform.eulerAngles += Vector3.forward * speedRot * Time.deltaTime;
-        if (transform.localEulerAngles.z >= 80 && !back)
+        if (!_360)
         {
-            speedRot = -Mathf.Abs(speedRot);
-            back = true;
-        }
-        else if(back)
-        {
-            if (transform.localEulerAngles.z <= 280 && transform.localEulerAngles.z >= 265)
+            if (!back)
             {
-                back = false;
-                speedRot = Mathf.Abs(speedRot);
+                rot += speedRot * Time.deltaTime;
+                if (rot >= 80) back = true;
+            }
+
+            if (back)
+            {
+                rot -= speedRot * Time.deltaTime;
+                if (rot <= -80) back = false;
             }
         }
+        else
+        {
+            rot += speedRot * Time.deltaTime;
+        }
+
+        transform.localEulerAngles = new Vector3(0, 0, rot);
     }
 }

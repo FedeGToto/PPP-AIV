@@ -17,12 +17,16 @@ public struct PossibleInput
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager instance;
+
     [SerializeField] PlayerInputs[] players;
     KeyCode A, W, D;
     bool[] used;
 
     private void Start()
     {
+        if (instance == null) instance = this;
+
         A = KeyCode.A;
         W = KeyCode.W;
         D = KeyCode.D;
@@ -46,6 +50,14 @@ public class InputManager : MonoBehaviour
                 used[combPos] = true;
             }
             else i--;
+        }
+    }
+
+    public void ResetInputs()
+    {
+        for (int i = 0; i < used.Length; i++)
+        {
+            used[i] = false;
         }
     }
 }

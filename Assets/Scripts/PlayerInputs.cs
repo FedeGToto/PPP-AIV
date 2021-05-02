@@ -130,6 +130,8 @@ public class PlayerInputs : MonoBehaviour
             rb.position = initialPos;
             gameObject.SetActive(false);
         }
+
+        InputManager.instance.ResetInputs();
     }
 
 }

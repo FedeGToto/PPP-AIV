@@ -15,14 +15,17 @@ public class PauseManager : MonoBehaviour
 
     public void PauseOneScene()
     {
-        for (int i = 0; i < player.Length; i++)
+        if (Inventory.instance.num >= costForPause)
         {
-            if (!scenePaused[i])
+            for (int i = 0; i < player.Length; i++)
             {
-                scenePaused[i] = true;
-                player[i].SetPause();
-                Inventory.instance.Remove(costForPause);
-                return;
+                if (!scenePaused[i])
+                {
+                    scenePaused[i] = true;
+                    player[i].SetPause();
+                    Inventory.instance.Remove(costForPause);
+                    return;
+                }
             }
         }
     }

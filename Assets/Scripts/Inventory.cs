@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
 
     [SerializeField] TextMeshProUGUI itemNumber;
-    int num;
+    public int num { get; protected set; }
 
     private void Awake()
     {

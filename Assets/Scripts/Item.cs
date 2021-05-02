@@ -14,7 +14,7 @@ public class Item : MonoBehaviour
         coll = GetComponent<Collider2D>();
 
 
-        GameObject g = GameObject.FindGameObjectWithTag("Player");
+        GameObject g = GameObject.FindGameObjectWithTag("RightPlayer");
         PlayerInputs eventReset = g.GetComponent<PlayerInputs>();
 
         eventReset.resetItems += ActivateItem;

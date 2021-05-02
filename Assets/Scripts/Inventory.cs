@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
 
         //PlayerInputs eventItem = GameObject.Find("Player").GetComponent<PlayerInputs>();
 
-        GameObject g = GameObject.FindGameObjectWithTag("Player");
+        GameObject g = GameObject.FindGameObjectWithTag("RightPlayer");
         PlayerInputs eventItem = g.GetComponent<PlayerInputs>();
         eventItem.resetItems += ResetScore;
 

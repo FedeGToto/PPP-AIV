@@ -1,20 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
     public float speedRot = 5f;
+    public bool _360;
+    bool back;
+
+    float rot;
+
     void Update()
     {
-        transform.eulerAngles += Vector3.forward * speedRot * Time.deltaTime;
-        if (transform.localEulerAngles.z >= 80)
+        if (!_360)
         {
-            speedRot = -Mathf.Abs(speedRot);
+            if (!back)
+            {
+                rot += speedRot * Time.deltaTime;
+                if (rot >= 80) back = true;
+            }
+
+            if (back)
+            {
+                rot -= speedRot * Time.deltaTime;
+                if (rot <= -80) back = false;
+            }
         }
-        else if(transform.localEulerAngles.z <= -80)
+        else
         {
-            speedRot = Mathf.Abs(speedRot);
+            rot += speedRot * Time.deltaTime;
         }
+
+        transform.localEulerAngles = new Vector3(0, 0, rot);
     }
 }

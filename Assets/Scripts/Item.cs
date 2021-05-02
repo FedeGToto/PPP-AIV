@@ -22,9 +22,12 @@ public class Item : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Inventory.instance.Add();
-        anim.SetBool("Pick", true);
-        coll.enabled = false;
+        if(collision.gameObject.tag=="Player" || collision.gameObject.tag == "RightPlayer")
+        {
+            Inventory.instance.Add();
+            anim.SetBool("Pick", true);
+            coll.enabled = false;
+        }
     }
 
     private void ActivateItem(object sender, EventArgs e)
